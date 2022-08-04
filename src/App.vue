@@ -1,10 +1,26 @@
 <template>
-  <nav>
-    <router-link to="/">Home</router-link> |
-    <router-link to="/about">About</router-link>
-  </nav>
+  <header class="row header">
+    <navbar-vue class="col-sm-12 col-md-6"></navbar-vue>
+    <div class="col-sm-12 col-md-6">
+      <button class="btn btn-success">Регистрация</button>
+      <button class="btn">Авторизация</button>
+      <button class="btn">Выход</button>
+      <p class="d-inline-block ms-2 me-2">Имя</p> 
+    </div>
+  </header>
   <router-view/>
 </template>
+
+<script>
+import NavbarVue from './components/Navbar.vue'
+export default {
+  components:{
+    NavbarVue
+  }  
+}
+
+</script>
+
 
 <style>
 #app {
@@ -15,16 +31,10 @@
   color: #2c3e50;
 }
 
-nav {
-  padding: 30px;
+header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
 }
 
-nav a {
-  font-weight: bold;
-  color: #2c3e50;
-}
-
-nav a.router-link-exact-active {
-  color: #42b983;
-}
 </style>
