@@ -17,7 +17,6 @@ export default {
       padding: 30px;
       display: flex;
       flex-wrap: wrap;
-      justify-content: center;
     }
 
     nav a {
