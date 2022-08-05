@@ -5,15 +5,18 @@
       :options="selectOptions"
       v-model:selectValue="selectValue"
     ></vue-select>
-    {{selectValue}}
+    <vue-table :date="employees"/>
   </div>
 </template>
 
 <script>
 import VueSelect from "@/components/VueSelect"
+import VueTable from "@/components/VueTable"
+
 export default {
   components: {
-    VueSelect
+    VueSelect,
+    VueTable
   },
   data() {
     return {
@@ -25,7 +28,33 @@ export default {
         {name: 'Заказ', value:"order"}
       ],
       nameSelect: 'Выберите таблицу',
-      selectValue: ''
+      selectValue: '',
+      employees: [
+        {
+          id: new Date(),
+          name: "Egor"
+        },
+        {
+          id: new Date(),
+          name: "Egor"
+        },
+        {
+          id: new Date(),
+          name: "Egor"
+        },
+        {
+          id: new Date(),
+          name: "Egor"
+        },
+        {
+          id: new Date(),
+          name: "Egor"
+        },
+        {
+          id: new Date(),
+          name: "Egor"
+        }
+      ]
     }
   }
 }
