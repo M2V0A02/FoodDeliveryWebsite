@@ -8,36 +8,15 @@
       <p class="username d-inline-block">Имя</p> 
     </div>
   </header>
-  <food-list 
-    :foods="foods" 
-    @addCount="(id) => foods.find(food => food.id === id).count++"
-    @subtractCount="(id) => foods.find(food => food.id === id).count--"
-  >
-  </food-list>
   <router-view/>
 </template>
-
 <script>
 import NavbarVue from '@/components/Navbar.vue'
-import FoodList from '@/components/FoodList.vue'
+
 export default {
   components:{
     NavbarVue,
-    FoodList,
 },
-  data() {
-      return {
-          foods: [
-            {id: "1", img: "https://piginfo.ru/upload/iblock/c13/burger.jpg", title: "Бургер", compound: "Мясо, хлеб, майонез", price: "120", count: "1"},              
-            {id: "2", img: "https://piginfo.ru/upload/iblock/c13/burger.jpg", title: "Бургер", compound: "Мясо, хлеб, майонез", price: "120", count: "0"},              
-            {id: "3", img: "https://piginfo.ru/upload/iblock/c13/burger.jpg", title: "Бургер", compound: "Мясо, хлеб, майонез", price: "120", count: "0"},              
-            {id: "4", img: "https://piginfo.ru/upload/iblock/c13/burger.jpg", title: "Бургер", compound: "Мясо, хлеб, майонез", price: "120", count: "0"},              
-            {id: "5", img: "https://piginfo.ru/upload/iblock/c13/burger.jpg", title: "Бургер", compound: "Мясо, хлеб, майонез", price: "120", count: "0"},              
-            {id: "6", img: "https://piginfo.ru/upload/iblock/c13/burger.jpg", title: "Бургер", compound: "Мясо, хлеб, майонез", price: "120", count: "0"},              
-            {id: "7", img: "https://piginfo.ru/upload/iblock/c13/burger.jpg", title: "Бургер", compound: "Мясо, хлеб, майонез", price: "120", count: "0"},              
-          ]
-        }
-  },
 } 
 
 </script>
