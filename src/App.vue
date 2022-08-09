@@ -1,12 +1,6 @@
 <template>
   <header class="header row">
     <navbar-vue class="col-sm-12 col-md-6"></navbar-vue>
-    <div class="user-panel col-sm-12 col-md-6 d-flex justify-content-end">
-      <button class="btn btn-success">Регистрация</button>
-      <button class="btn">Авторизация</button>
-      <button class="btn">Выход</button>
-      <p class="username d-inline-block">Имя</p> 
-    </div>
   </header>
   <router-view/>
 </template>
