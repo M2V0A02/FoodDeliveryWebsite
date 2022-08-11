@@ -1,11 +1,11 @@
 <template>
   <header class="header row">
-    <navbar-vue class="col-sm-12 col-md-6"></navbar-vue>
+    <navbar-vue class="col justify-content-center"></navbar-vue>
   </header>
   <router-view/>
 </template>
 <script>
-import NavbarVue from '@/components/Navbar.vue'
+import NavbarVue from '@/components/VueNavbar.vue'
 
 export default {
   components:{
