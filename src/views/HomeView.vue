@@ -1,7 +1,7 @@
 <template>
   <div class="home">
-    <food-list 
-      :foods="foods" 
+    <food-list
+      :foods="showFood" 
       @addCount="(id) => foods.find(food => food.id === id).count++ "
       @subtractCount="(id) => foods.find(food => food.id === id).count--" 
     >
@@ -11,6 +11,7 @@
         class="justify-content-center" 
         :totalPages="totalPages" 
         v-model:current-page="currentPage">
+        <a href="#1"></a>
       </pagination>
     </div>
     <div class="row me-4 mb-4"  >
@@ -55,12 +56,12 @@ export default {
             {id: "12", img: "https://piginfo.ru/upload/iblock/c13/burger.jpg", name: "Бургер", compound: "Мясо, хлеб, майонез", price: "120", count: "0"},              
             {id: "13", img: "https://piginfo.ru/upload/iblock/c13/burger.jpg", name: "Бургер", compound: "Мясо, хлеб, майонез", price: "120", count: "0"},              
             {id: "14", img: "https://piginfo.ru/upload/iblock/c13/burger.jpg", name: "Бургер", compound: "Мясо, хлеб, майонез", price: "120", count: "0"},              
-            {id: "15", img: "https://piginfo.ru/upload/iblock/c13/burger.jpg", name: "Бургер", compound: "Мясо, хлеб, майонез", price: "120", count: "0"},              
+            {id: "15", img: "https://piginfo.ru/upload/iblock/c13/burger.jpg", name: "Дорогой бургер", compound: "Мясо, хлеб, майонез", price: "240", count: "0"},              
             {id: "16", img: "https://piginfo.ru/upload/iblock/c13/burger.jpg", name: "Бургер", compound: "Мясо, хлеб, майонез", price: "120", count: "0"},              
             {id: "18", img: "https://piginfo.ru/upload/iblock/c13/burger.jpg", name: "Бургер", compound: "Мясо, хлеб, майонез", price: "120", count: "0"},              
             {id: "19", img: "https://piginfo.ru/upload/iblock/c13/burger.jpg", name: "Бургер", compound: "Мясо, хлеб, майонез", price: "120", count: "0"},
             {id: "21", img: "https://piginfo.ru/upload/iblock/c13/burger.jpg", name: "Бургер", compound: "Мясо, хлеб, майонез", price: "120", count: "0"},              
-            {id: "22", img: "https://piginfo.ru/upload/iblock/c13/burger.jpg", name: "Бургер", compound: "Мясо, хлеб, майонез", price: "120", count: "0"},              
+            {id: "22", img: "https://piginfo.ru/upload/iblock/c13/burger.jpg", name: "Плохой бургер", compound: "Мясо, хлеб, майонез", price: "50", count: "0"},              
             {id: "23", img: "https://piginfo.ru/upload/iblock/c13/burger.jpg", name: "Бургер", compound: "Мясо, хлеб, майонез", price: "120", count: "0"},              
             {id: "24", img: "https://piginfo.ru/upload/iblock/c13/burger.jpg", name: "Бургер", compound: "Мясо, хлеб, майонез", price: "120", count: "0"},              
             {id: "25", img: "https://piginfo.ru/upload/iblock/c13/burger.jpg", name: "Бургер", compound: "Мясо, хлеб, майонез", price: "120", count: "0"},              
@@ -68,19 +69,19 @@ export default {
             {id: "28", img: "https://piginfo.ru/upload/iblock/c13/burger.jpg", name: "Бургер", compound: "Мясо, хлеб, майонез", price: "120", count: "0"},              
             {id: "29", img: "https://piginfo.ru/upload/iblock/c13/burger.jpg", name: "Бургер", compound: "Мясо, хлеб, майонез", price: "120", count: "0"},
             {id: "31", img: "https://piginfo.ru/upload/iblock/c13/burger.jpg", name: "Бургер", compound: "Мясо, хлеб, майонез", price: "120", count: "0"},              
-            {id: "32", img: "https://piginfo.ru/upload/iblock/c13/burger.jpg", name: "Бургер", compound: "Мясо, хлеб, майонез", price: "120", count: "0"},              
+            {id: "32", img: "https://piginfo.ru/upload/iblock/c13/burger.jpg", name: "Элитный бургер", compound: "Мясо, хлеб, майонез", price: "680", count: "0"},              
             {id: "33", img: "https://piginfo.ru/upload/iblock/c13/burger.jpg", name: "Бургер", compound: "Мясо, хлеб, майонез", price: "120", count: "0"},              
             {id: "34", img: "https://piginfo.ru/upload/iblock/c13/burger.jpg", name: "Бургер", compound: "Мясо, хлеб, майонез", price: "120", count: "0"},              
             {id: "35", img: "https://piginfo.ru/upload/iblock/c13/burger.jpg", name: "Бургер", compound: "Мясо, хлеб, майонез", price: "120", count: "0"},              
             {id: "36", img: "https://piginfo.ru/upload/iblock/c13/burger.jpg", name: "Бургер", compound: "Мясо, хлеб, майонез", price: "120", count: "0"},              
             {id: "38", img: "https://piginfo.ru/upload/iblock/c13/burger.jpg", name: "Бургер", compound: "Мясо, хлеб, майонез", price: "120", count: "0"},              
-            {id: "39", img: "https://piginfo.ru/upload/iblock/c13/burger.jpg", name: "Бургер", compound: "Мясо, хлеб, майонез", price: "120", count: "0"},
+            {id: "39", img: "https://piginfo.ru/upload/iblock/c13/burger.jpg", name: "П", compound: "Мясо, хлеб, майонез", price: "120", count: "0"},
           ],
           titleModal: "Заказы",
           textModal: "Бургеры",
           buttonTextModal: "Сделать заказ",
           currentPage: 1,
-          limit: 10,
+          limit: 6,
         }
   },
   computed: {
@@ -103,10 +104,13 @@ export default {
           return sum + current['price'] * current['count']
         }, 0) + "₽"
     },
+    showFood() {
+      return this.foods.slice(this.limit * (this.currentPage - 1), this.limit * this.currentPage)
+    },
     totalPages() {
       return Math.ceil(this.foods.length / this.limit);
     }
-  }
+  },
 }
 </script>
 

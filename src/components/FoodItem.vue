@@ -1,5 +1,5 @@
 <template>
-  <div class="card col-lg-3 col-md-5 col-sm-6 col-sm-9 col-10 me-4 mb-4 mt-3 pt-3">
+  <div class="card col-lg-3 col-md-5 col-sm-6 col-sm-9 col-10 me-2 mb-2 mt-1 pt-3">
     <img class="card-img-top" :src="food.img" alt="Title">
     <div class="card-body">
         <h4 class="card-title">{{ food.name }} <span class="badge bg-dark" v-if="food.count != 0">{{food.count}}</span></h4>

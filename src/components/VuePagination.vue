@@ -31,10 +31,17 @@ export default {
     props:{
         totalPages: Number,
         currentPage: Number
+    },
+    watch:{
+        currentPage(){
+            this.$emit('update:currentPage', this.currentPage)
+        }
     }
 }
 </script>
 
 <style>
-    
+    nav{
+        padding-top:0px;
+    }
 </style>

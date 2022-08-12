@@ -1,5 +1,5 @@
 <template>
-  <div class="food-list row justify-content-center">
+  <div class="food-list row justify-content-center" >
     <food-item 
         v-for="food of foods" 
         :key="food.id" 
