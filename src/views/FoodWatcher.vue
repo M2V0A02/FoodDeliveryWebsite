@@ -31,28 +31,64 @@ export default {
       selectValue: '',
       employees: [
         {
-          id: new Date(),
-          name: "Egor"
+          id: 1,
+          name: "Egor",
+          pass: '123',
+          gender: 'm',
+          sex: 'm',
+          value: 5000,
+          isMarried: false,
+          isGenius: true,
         },
         {
-          id: new Date(),
-          name: "Egor"
+          id: 2,
+          name: "Egor",
+          pass: '123',
+          gender: 'm',
+          sex: 'm',
+          value: 5000,
+          isMarried: false,
+          isGenius: true,
         },
         {
-          id: new Date(),
-          name: "Egor"
+          id: 3,
+          name: "Egor",
+          pass: '123',
+          gender: 'm',
+          sex: 'm',
+          value: 5000,
+          isMarried: false,
+          isGenius: true,
         },
         {
-          id: new Date(),
-          name: "Egor"
+          id: 4,
+          name: "Egor",
+          pass: '123',
+          gender: 'm',
+          sex: 'm',
+          value: 5000,
+          isMarried: false,
+          isGenius: true,
         },
         {
-          id: new Date(),
-          name: "Egor"
+          id: 5,
+          name: "Egor",
+          pass: '123',
+          gender: 'm',
+          sex: 'm',
+          value: 5000,
+          isMarried: false,
+          isGenius: true,
         },
         {
-          id: new Date(),
-          name: "Egor"
+          id: 6,
+          name: "EgorEEg",
+          pass: '123',
+          gender: 'm',
+          sex: 'm',
+          value: 5000,
+          isMarried: false,
+          isGenius: true,
         }
       ]
     }
