@@ -6,11 +6,16 @@
       v-model:selectValue="selectValue"
     ></vue-select> -->
     <control-panel 
-     :data="employees"
+     :data="showEmployees"
      @addRow="data => employees.push(data)"
      @changeLine=""
      @deleteRows=" deleteRows => employees = employees.filter(item => !deleteRows.includes(item.id))"
     ></control-panel>
+    <vue-pagination
+      class="justify-content-center" 
+      :totalPages="totalPages" 
+      v-model:current-page="currentPage" 
+    />
   </div>
 </template>
 
@@ -18,12 +23,14 @@
 import VueSelect from "@/components/VueSelect"
 import VueTable from "@/components/VueTable"
 import ControlPanel from "@/components/ControlPanel.vue";
+import VuePagination from "@/components/VuePagination.vue";
 
 export default {
   components: {
     VueSelect,
     VueTable,
-    ControlPanel
+    ControlPanel,
+    VuePagination
 },
   data() {
     return {
@@ -35,6 +42,8 @@ export default {
         {name: 'Заказ', value:"order"}
       ],
       nameSelect: 'Выберите таблицу',
+      limit: 5,
+      currentPage: 1,
       selectValue: '',
       employees: [
         {
@@ -99,6 +108,14 @@ export default {
         }
       ],
     }
+  },
+  computed: {
+      totalPages() {
+      return Math.ceil(this.employees.length / this.limit);
+    },
+    showEmployees() {
+      return this.employees.slice(this.limit * (this.currentPage - 1), this.limit * this.currentPage)
+    },
   }
 }
 </script>
