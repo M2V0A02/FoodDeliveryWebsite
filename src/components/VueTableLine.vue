@@ -14,7 +14,7 @@
         :isThead="isThead"
         :key="key"
         :value="cell"
-        @changeValue=" (value) => this.$emit('changeDeleteRow', value, row.id, key)"
+        @changeValue=" (value) => this.$emit('changeValue', value, row.id, key)"
       />
     </tr>
 </template>

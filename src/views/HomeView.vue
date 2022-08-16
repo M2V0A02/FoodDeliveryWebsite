@@ -16,9 +16,8 @@
     </div>
     <div class="row me-4 mb-4"  >
       <modal-window
-        :title="titleModal"
+        :title="'Заказы'"
         :nameButton="'Сделать заказ'"
-        :buttonText="buttonTextModal"
       >
       <div>
          <div class="d-flex justify-content-end align-items-center" v-for="food of createOrder" :key="food">
@@ -88,9 +87,7 @@ export default {
             {id: "38", img: "https://piginfo.ru/upload/iblock/c13/burger.jpg", name: "Бургер", compound: "Мясо, хлеб, майонез", price: "120", count: "0"},              
             {id: "39", img: "https://piginfo.ru/upload/iblock/c13/burger.jpg", name: "П", compound: "Мясо, хлеб, майонез", price: "120", count: "0"},
           ],
-          titleModal: "Заказы",
           textModal: "Бургеры",
-          buttonTextModal: "Сделать заказ",
           currentPage: 1,
           limit: 6,
         }

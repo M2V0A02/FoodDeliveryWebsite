@@ -1,27 +1,30 @@
 <template>
   <div class="Food Watcher">
-    <vue-select 
+    <!-- <vue-select 
       :nameSelect="nameSelect"
       :options="selectOptions"
       v-model:selectValue="selectValue"
-    ></vue-select>
-    <vue-table 
-    :date="employees"
-    :addCheckBoxes="true"
-    @deleteRows=" deleteRows => employees = employees.filter(item => !deleteRows.includes(item.id))"
-    />
+    ></vue-select> -->
+    <control-panel 
+     :data="employees"
+     @addRow="data => employees.push(data)"
+     @changeLine=""
+     @deleteRows=" deleteRows => employees = employees.filter(item => !deleteRows.includes(item.id))"
+    ></control-panel>
   </div>
 </template>
 
 <script>
 import VueSelect from "@/components/VueSelect"
 import VueTable from "@/components/VueTable"
+import ControlPanel from "@/components/ControlPanel.vue";
 
 export default {
   components: {
     VueSelect,
-    VueTable
-  },
+    VueTable,
+    ControlPanel
+},
   data() {
     return {
       selectOptions: [

@@ -11,12 +11,12 @@
             </thead>
             <tbody>
                 <vue-table-line
-                 v-for="line of date"
+                 v-for="line of data"
                  :key="line.id"
                  :addCheckBoxes="addCheckBoxes"
                  :row="line"
                  @changeDeleteRow="changeDeleteRows"
-                 @changeValue="(value, id, key) => date.map(item => item.id == id ? item[key] = value : item)"
+                 @changeValue="(value, id, key) => this.$emit('changeValue', value, id, key)"
                  />
             </tbody>
         </table>
@@ -28,7 +28,7 @@ import VueTableLine from './VueTableLine.vue'
 export default {
   components: { VueTableLine },
     props:{
-        date: {
+        data: {
             type: Object,
             required: true,
             default: []
@@ -44,8 +44,8 @@ export default {
     },
     computed:{
         getKey(){
-            if (this.date.length > 0)
-                return Object.keys(this.date[0])
+            if (this.data.length > 0)
+                return Object.keys(this.data[0])
         }
     },
     methods:{

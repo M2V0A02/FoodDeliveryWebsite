@@ -17,7 +17,7 @@
                 </div>
                 <div class="modal-footer">
                     <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Закрыть</button>
-                    <button type="button" class="btn btn-primary">{{  buttonText  }}</button>
+                    <button type="button" class="btn btn-primary" @click="this.$emit('click')">{{  nameButton  }}</button>
                 </div>
             </div>
         </div>
