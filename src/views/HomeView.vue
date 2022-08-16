@@ -17,12 +17,23 @@
     <div class="row me-4 mb-4"  >
       <modal-window
         :title="titleModal"
-        :contents="createOrder"
-        :conclusionText="totalOrderPrice"
+        :nameButton="'Сделать заказ'"
         :buttonText="buttonTextModal"
-        @subtractCount="(id) => foods.find(food => food.id === id).count--"
       >
-        <h3 class="modal-text">Сделать заказ</h3>
+      <div>
+         <div class="d-flex justify-content-end align-items-center" v-for="food of createOrder" :key="food">
+          <p class="text-start flex-grow-1 p-0 m-0">{{  food['text']  }}</p> 
+          <button 
+              class="btn btn-danger pt-0 pb-0 ps-2 pe-2 ms-2"
+              @click="() => foods.find(item => item.id === food['id']).count--"
+          >
+          - 
+          </button><br>
+        </div>
+        <div class="d-flex justify-content-end text-danger fs-5">
+            {{totalOrderPrice}}
+        </div>
+      </div>
       </modal-window>
     </div>
   </div>

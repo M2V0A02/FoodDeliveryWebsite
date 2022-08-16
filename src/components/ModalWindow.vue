@@ -1,7 +1,7 @@
 <template>
     <div>
     <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#Modal">
-        <slot></slot>
+        {{nameButton}}
     </button>
     </div>
     <!-- Модальное окно -->
@@ -13,18 +13,7 @@
                     <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Закрыть"></button>
                 </div>
                 <div class="modal-body">
-                    <div class="d-flex justify-content-end align-items-center" v-for="food of contents" :key="food">
-                        <p class="text-start flex-grow-1 p-0 m-0">{{  food['text']  }}</p> 
-                        <button 
-                            class="btn btn-danger pt-0 pb-0 ps-2 pe-2 ms-2"
-                            @click="this.$emit('subtractCount', food['id']);"
-                        >
-                        - 
-                        </button><br>
-                    </div>
-                    <div class="d-flex justify-content-end text-danger fs-5">
-                        {{conclusionText}}
-                    </div>
+                    <slot></slot>
                 </div>
                 <div class="modal-footer">
                     <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Закрыть</button>
@@ -39,9 +28,8 @@
 export default {
     props:{
         title: String,
-        contents: Object,
         buttonText: String,
-        conclusionText: String,
+        nameButton: String,
     }
 }
 </script>
