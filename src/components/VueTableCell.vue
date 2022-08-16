@@ -3,7 +3,7 @@
     {{value}}
   </th>
   <td class="cell" v-else>
-    <input class="form-input form-control" @blur="(event) => this.$emit('changeValue', event.target.value)" :value="value">
+    <input class="table-input form-input form-control" @blur="(event) => this.$emit('changeValue', event.target.value)" :value="value">
   </td>
 </template>
 
@@ -20,15 +20,11 @@ export default {
   .th-cell{
     min-width: 75px;
     max-width: 300px;
-    padding:0 25px;
+    padding:0 25px 0 25px;
+    text-align: left;
   }
   .cell{
-    border: none !important;
-    padding: 0 !important;
-    width: auto !important;
+    width: auto;
   }
 
-  .form-input{
-    
-  }
 </style>

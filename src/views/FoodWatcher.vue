@@ -5,7 +5,11 @@
       :options="selectOptions"
       v-model:selectValue="selectValue"
     ></vue-select>
-    <vue-table :date="employees"/>
+    <vue-table 
+    :date="employees"
+    :addCheckBoxes="true"
+    @deleteRows=" deleteRows => employees = employees.filter(item => !deleteRows.includes(item.id))"
+    />
   </div>
 </template>
 
@@ -90,7 +94,7 @@ export default {
           isMarried: false,
           isGenius: true,
         }
-      ]
+      ],
     }
   }
 }
