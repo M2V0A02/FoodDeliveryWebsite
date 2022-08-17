@@ -1,10 +1,19 @@
 <template>
   <div class="Food Watcher">
-    <!-- <vue-select 
-      :nameSelect="nameSelect"
-      :options="selectOptions"
-      v-model:selectValue="selectValue"
-    ></vue-select> -->
+    <div class="ms-auto me-auto col-12 col-md-6">
+      <vue-select
+        class="mb-4"
+        :nameSelect="'Выберите столбец'"
+        :options="selectColumn"
+        v-model:selectValue="selectValue"
+      ></vue-select>
+      <div class="input-group mb-3 col-6">
+        <div class="input-group-prepend">
+          <span class="input-group-text">Поиск</span>
+        </div>
+        <input v-model="searchQuery" type="text" class="form-control">
+      </div>
+    </div>
     <control-panel 
      :data="showEmployees"
      @addRow="data => employees.push(data)"
@@ -30,19 +39,19 @@ export default {
     VueSelect,
     VueTable,
     ControlPanel,
-    VuePagination
+    VuePagination,
 },
   data() {
     return {
       selectOptions: [
-        {name: 'Сотрудники', value:"employees"},
+        {name: 'id', value:"employees"},
         {name: 'Поставщики', value:"provider"},
         {name: 'Раздел-меню', value:"menu-section"},
         {name: 'Блюдо', value:"dish"},
         {name: 'Заказ', value:"order"}
       ],
-      nameSelect: 'Выберите таблицу',
       limit: 5,
+      searchQuery: '',
       currentPage: 1,
       selectValue: '',
       employees: [
@@ -110,12 +119,25 @@ export default {
     }
   },
   computed: {
-      totalPages() {
-      return Math.ceil(this.employees.length / this.limit);
+    totalPages() {
+      return Math.ceil(this.searchedData.length / this.limit);
     },
     showEmployees() {
-      return this.employees.slice(this.limit * (this.currentPage - 1), this.limit * this.currentPage)
+      return this.searchedData.slice(this.limit * (this.currentPage - 1), this.limit * this.currentPage)
     },
+    searchedData() {
+      if (this.selectValue === '') return this.employees
+      return this.employees
+              .filter(item => 
+                item[this.selectValue].toString()
+                .toLowerCase()
+                .includes(this.searchQuery)
+                )
+    },
+    selectColumn() {
+      let keys = Object.keys(this.employees[0])
+      return keys.map(key => {return {value: key, name:key}})
+    }
   }
 }
 </script>
