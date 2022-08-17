@@ -1,9 +1,9 @@
 <template>
     <tr>
-      <th v-if="isThead && addCheckBoxes">
-        <button class="btn btn-danger" @click="this.$emit('deleteRows')"> Удалить</button>
+      <th v-if="isThead && addCheckBoxes && row">
+        <button class="btn btn-danger" @click="this.$emit('deleteRows')">Удалить</button>
       </th>
-      <th v-else-if="addCheckBoxes">
+      <th v-else-if="addCheckBoxes && row">
         <input type="checkbox" 
          class="table-checkbox"
          @change="this.$emit('changeDeleteRow', row.id)">

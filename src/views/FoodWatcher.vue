@@ -1,5 +1,21 @@
 <template>
   <div class="Food Watcher">
+      <button class="btn btn-primary mb-4" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasExample" aria-controls="offcanvasExample">
+        Выбрать таблицу
+      </button>
+      <div class="offcanvas offcanvas-start" tabindex="-1" id="offcanvasExample" aria-labelledby="offcanvasExampleLabel">
+        <div class="offcanvas-header">
+          <h5 class="offcanvas-title" id="offcanvasExampleLabel">Выбор таблицы</h5>
+          <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+        </div>
+        <div class="offcanvas-body">
+            <vue-select
+              :nameSelect="'Выберите таблицу'"
+              :options="selectOptions"
+              v-model:selectValue="table"
+            ></vue-select>
+        </div>
+      </div>
     <div class="ms-auto me-auto col-12 col-md-6">
       <vue-select
         class="mb-4"
@@ -14,7 +30,8 @@
         <input v-model="searchQuery" type="text" class="form-control">
       </div>
     </div>
-    <control-panel 
+    <control-panel
+     class="mb-4" 
      :data="showEmployees"
      @addRow="data => employees.push(data)"
      @changeLine=""
@@ -51,6 +68,7 @@ export default {
         {name: 'Заказ', value:"order"}
       ],
       limit: 5,
+      table: '',
       searchQuery: '',
       currentPage: 1,
       selectValue: '',
