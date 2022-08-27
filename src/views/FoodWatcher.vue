@@ -19,7 +19,7 @@
     <div class="ms-auto me-auto col-12 col-md-6">
       <vue-select
         class="mb-4"
-        :nameSelect="'Выберите столбец'"
+        :nameSelect="'Выберите столбец для поиска'"
         :options="selectColumn"
         v-model:selectValue="selectValue"
       ></vue-select>
@@ -61,11 +61,7 @@ export default {
   data() {
     return {
       selectOptions: [
-        {name: 'id', value:"employees"},
-        {name: 'Поставщики', value:"provider"},
-        {name: 'Раздел-меню', value:"menu-section"},
-        {name: 'Блюдо', value:"dish"},
-        {name: 'Заказ', value:"order"}
+        {name: 'Блюда', value:"dish"},
       ],
       limit: 5,
       table: '',
@@ -75,64 +71,40 @@ export default {
       employees: [
         {
           id: 1,
-          name: "Egor",
-          pass: '123',
-          gender: 'm',
-          sex: 'm',
-          value: 5000,
-          isMarried: false,
-          isGenius: true,
+          name: "бургер",
+          price: '200',
+          compound: 'мясо, хлеб',
         },
         {
           id: 2,
-          name: "Egor",
-          pass: '123',
-          gender: 'm',
-          sex: 'm',
-          value: 5000,
-          isMarried: false,
-          isGenius: true,
+          name: "борщ",
+          price: '250',
+          compound: 'мясо, вода, овощи',
         },
         {
           id: 3,
-          name: "Egor",
-          pass: '123',
-          gender: 'm',
-          sex: 'm',
-          value: 5000,
-          isMarried: false,
-          isGenius: true,
+          name: "большой бургер",
+          price: '300',
+          compound: 'мясо, хлеб',
         },
         {
           id: 4,
-          name: "Egor",
-          pass: '123',
-          gender: 'm',
-          sex: 'm',
-          value: 5000,
-          isMarried: false,
-          isGenius: true,
+          name: "салат",
+          price: '100',
+          compound: 'овощи',
         },
         {
           id: 5,
-          name: "Egor",
-          pass: '123',
-          gender: 'm',
-          sex: 'm',
-          value: 5000,
-          isMarried: false,
-          isGenius: true,
+          name: "салат",
+          price: '100',
+          compound: 'овощи',
         },
         {
           id: 6,
-          name: "EgorEEg",
-          pass: '123',
-          gender: 'm',
-          sex: 'm',
-          value: 5000,
-          isMarried: false,
-          isGenius: true,
-        }
+          name: "салат",
+          price: '100',
+          compound: 'овощи',
+        },
       ],
     }
   },

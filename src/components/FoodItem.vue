@@ -11,7 +11,7 @@
     <div class="card-footer text-muted">
         <button class="btn btn-success" @click="this.$emit('addCount', food.id);">+</button>
         <button class="btn btn-danger" v-if="food.count != 0" @click="this.$emit('subtractCount', food.id);">-</button>
-        <div>
+        <div class="mt-2">
           {{food.price}}₽
         </div>
       </div>
