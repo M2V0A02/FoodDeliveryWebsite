@@ -10,7 +10,8 @@
         <input type="text" :id="`${key}Form`" class="form-control" aria-label="Username" >
     </div>
      </modal-window>
-     <vue-table 
+     <vue-table
+        class="d-flex justify-content-center" 
         :data="data"
         :addCheckBoxes="true"
         @deleteRows=" deleteRows => this.$emit('deleteRows', deleteRows)"
