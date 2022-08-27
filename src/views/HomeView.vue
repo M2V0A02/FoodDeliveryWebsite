@@ -54,11 +54,11 @@ export default {
   data() {
       return {
           foods: [
-            {id: "1", img: "https://piginfo.ru/upload/iblock/c13/burger.jpg", name: "Бургер", compound: "Мясо, хлеб, майонез", price: "120", count: "0"},              
-            {id: "2", img: "https://piginfo.ru/upload/iblock/c13/burger.jpg", name: "Бургер", compound: "Мясо, хлеб, майонез", price: "120", count: "0"},              
-            {id: "3", img: "https://piginfo.ru/upload/iblock/c13/burger.jpg", name: "Бургер", compound: "Мясо, хлеб, майонез", price: "120", count: "0"},              
-            {id: "4", img: "https://piginfo.ru/upload/iblock/c13/burger.jpg", name: "Бургер", compound: "Мясо, хлеб, майонез", price: "120", count: "0"},              
-            {id: "5", img: "https://piginfo.ru/upload/iblock/c13/burger.jpg", name: "Бургер", compound: "Мясо, хлеб, майонез", price: "120", count: "0"},              
+            {id: "1", img: "https://img1.russianfood.com/dycontent/images_upl/64/sm_63397.jpg", name: "Борщ с говядиной", compound: "говядина, свекла, картофель,", price: "250", count: "0"},              
+            {id: "2", img: "https://img1.russianfood.com/dycontent/images_upl/66/sm_65699.jpg", name: "Борщ классический", compound: "говядина, вода, картофель", price: "200", count: "0"},              
+            {id: "3", img: "https://img1.russianfood.com/dycontent/images_upl/124/sm_123024.jpg", name: "Борщ на курином бульоне", compound: "курица, капуста, свекла", price: "180", count: "0"},              
+            {id: "4", img: "https://img1.russianfood.com/dycontent/images_upl/256/sm_255825.jpg", name: "Красный борщ", compound: "мясо, морковь, лук репчатый", price: "270", count: "0"},              
+            {id: "5", img: "https://img1.russianfood.com/dycontent/images_upl/180/sm_179842.jpg", name: "Борщ Традиционный", compound: "говядина, картофель, морковь", price: "220", count: "0"},              
             {id: "6", img: "https://piginfo.ru/upload/iblock/c13/burger.jpg", name: "Бургер", compound: "Мясо, хлеб, майонез", price: "120", count: "0"},              
             {id: "8", img: "https://piginfo.ru/upload/iblock/c13/burger.jpg", name: "Бургер", compound: "Мясо, хлеб, майонез", price: "120", count: "0"},              
             {id: "9", img: "https://piginfo.ru/upload/iblock/c13/burger.jpg", name: "Бургер", compound: "Мясо, хлеб, майонез", price: "120", count: "0"},              

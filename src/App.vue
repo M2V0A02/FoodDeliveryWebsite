@@ -1,5 +1,5 @@
 <template>
-  <header class="header row">
+  <header class="header row mt-4">
     <navbar-vue class="col justify-content-center"></navbar-vue>
   </header>
   <router-view/>
